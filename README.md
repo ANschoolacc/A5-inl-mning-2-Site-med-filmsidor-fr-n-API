@@ -1,4 +1,4 @@
-<img src="assets\bihjografenlogo.png" alt="BiHjoGrafen" height="200px">
+<img src="/static/assets\bihjografenlogo.png" alt="BiHjoGrafen" height="200px">
 <hr>
 <h2>Practices</h2>
 
