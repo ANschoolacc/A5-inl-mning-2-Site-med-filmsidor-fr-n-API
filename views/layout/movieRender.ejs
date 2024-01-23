@@ -1,0 +1,22 @@
+        <% if (Array.isArray(movieRender)) { %>
+          <% movieRender.forEach(movie => { %>
+        <div class="movieTemplate__card">
+          <div class="movieTemplate__cover" style="background-image:url(<%= movie.attributes.image.url%>)"></div>
+          <div class="movieTemplate__img" style="background-image:url(<%= movie.attributes.image.url%>)"></div>
+          <h2 class="movieTemplate__title"><%= movie.attributes.title  %></h2>
+          <a class="movieTemplate__button" href="/movies/<%- movie.id %>">
+            Se mer
+          </a>
+        </div>
+        <% }); %>
+        <% } else {%>
+          <div class="movie__card">
+          <div class="movie__img" style="background-image:url(<%= movieRender.attributes.image.url%>)"></div>
+          <h2 class="movie__title"><%= movieRender.attributes.title  %></h2>
+          <%- markDownText %>
+          
+          <a class="movie__button" href="/movies">
+            Tillbaka till alla filmer
+          </a>
+        </div>
+        <% } %>
