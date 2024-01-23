@@ -12,20 +12,9 @@
     </div>
   </aside>
   <div class="container">
-    <h1 class="viewTop3__title">TOPP TRE</h1>
-    <section class="viewTop3__container"></section>
-    <h1 class="allMovies__title">ALLA FILMER</h1>
+    <h1 class="allMovies__title"><%= sectionTitle %></h1>
     <section class="allMovies">
-      <% moviesArr.forEach(movie => { %>
-        <div class="movieTemplate__card">
-          <div class="movieTemplate__cover" style="background-image:url(<%= movie.attributes.image.url%>)"></div>
-          <div class="movieTemplate__img" style="background-image:url(<%= movie.attributes.image.url%>)"></div>
-          <h2 class="movieTemplate__title"><%= movie.attributes.title  %></h2>
-          <a class="movieTemplate__button" href="/movies/<%- movie.attributes.imdbId %>">
-            Se mer
-          </a>
-        </div>
-      <% }); %>
+      <%- include('layout/movieRender')  %>
     </section>
   </div>
 </main>
