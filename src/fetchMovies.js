@@ -10,7 +10,7 @@ export async function allMovies(){
 }
 
 export async function specMovie(id){
-  const res = await fetch(api + '/movies' + id);
-  const movie = await res.json;
+  const res = await fetch(api + '/movies/' + id);
+  const movie = await res.json();
   return movie.data;
 }
