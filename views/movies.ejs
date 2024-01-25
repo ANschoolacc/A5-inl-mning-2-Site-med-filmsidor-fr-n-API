@@ -1,10 +1,12 @@
 <%- include("layout/header") %>
-<main class="moviesMain">
-  <div class="container">
-    <h1 class="allMovies__title"><%= sectionTitle %></h1>
-    <section class="allMovies">
-      <%- include('layout/movieRender')  %>
-    </section>
-  </div>
-</main>
-<%- include("layout/footer") %>
+  <main class="moviesMain">
+    <div class="container">
+      <h1 class="allMovies__title">
+        <%= sectionTitle %>
+      </h1>
+      <section class="allMovies">
+        <%- include('layout/movieRender') %>
+      </section>
+    </div>
+  </main>
+  <%- include("layout/footer") %>

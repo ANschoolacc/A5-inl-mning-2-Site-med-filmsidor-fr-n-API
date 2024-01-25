@@ -7,7 +7,7 @@ app.set('views', 'views')
 
 app.use('/', router);
 
-app.use('/static',express.static("./static"))
+app.use('/static', express.static("./static"))
 
 
 export default app;

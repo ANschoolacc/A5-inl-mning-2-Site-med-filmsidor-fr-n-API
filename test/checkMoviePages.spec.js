@@ -7,7 +7,7 @@ test('Check if id not found', async () => {
   const response = await request(app).get('/movies/0')
     .expect('Content-Type', 'text/html; charset=utf-8')
     .expect(404);
-    expect(response.text).toMatch('Filmen kunde inte hittas!')
+  expect(response.text).toMatch('Filmen kunde inte hittas!')
 })
 
 test('Isle of dogs page shows title of movie', async () => {
