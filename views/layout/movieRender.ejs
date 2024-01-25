@@ -9,12 +9,19 @@
           </a>
         </div>
         <% }); %>
-        <% } else {%>
+        <% } else if (typeof movieRender == 'object') {%>
           <div class="movie__card">
           <div class="movie__img" style="background-image:url(<%= movieRender.image.url%>)"></div>
           <h2 class="movie__title"><%= movieRender.title  %></h2>
           <%- markDownText %>
           
+          <a class="movie__button" href="/movies">
+            Tillbaka till alla filmer
+          </a>
+        </div>
+        <% } else { %>
+          <div class="notFound">
+          <h1 class="notFound__title"><%- movieRender %> </h1>
           <a class="movie__button" href="/movies">
             Tillbaka till alla filmer
           </a>
