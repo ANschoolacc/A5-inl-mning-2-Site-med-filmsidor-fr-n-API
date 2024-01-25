@@ -18,10 +18,9 @@ router.get('/about', (req, res) => {
 
 router.get('/movies/:id', async (req, res) => {
   const movieRender = await specMovie(req.params.id);
-  if (movieRender === 'Page not found') {
-    const errorText = 'Filmen kunde inte hittas!'
+  if (movieRender === '404 (Not found)') {
     res.status(404)
-    res.render('movies', { movieRender: errorText, title: 'Page not found', sectionTitle: '' })
+    res.render('movies', { movieRender: movieRender, title: movieRender, sectionTitle: '' })
   } else {
     res.render('movies', { movieRender: movieRender, title: movieRender.title, sectionTitle: "", markDownText: markDownConv(movieRender.intro) })
 

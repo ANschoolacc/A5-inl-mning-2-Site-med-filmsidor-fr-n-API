@@ -1,15 +1,13 @@
-        <% if (Array.isArray(movieRender)) { %>
-          <% movieRender.forEach(movie => { %>
-        <div class="movieTemplate__card">
-          <div class="movieTemplate__cover" style="background-image:url(<%= movie.image.url%>)"></div>
-          <div class="movieTemplate__img" style="background-image:url(<%= movie.image.url%>)"></div>
-          <h2 class="movieTemplate__title"><%= movie.title  %></h2>
-          <a class="movieTemplate__button" href="/movies/<%- movie.id %>">
-            Se mer
+        
+        <% if (typeof movieRender === 'string' || movieRender instanceof String ){ %>
+          <div class="notFound">
+          <h1 class="notFound__title">Filmen kunde inte hittas! </h1>
+          <h2 class="notFound__error"><%- movieRender %></h2>
+          <a class="movie__button" href="/movies">
+            Tillbaka till alla filmer
           </a>
         </div>
-        <% }); %>
-        <% } else if (typeof movieRender == 'object') {%>
+        <% } else if (!Array.isArray(movieRender)) {%>
           <div class="movie__card">
           <div class="movie__img" style="background-image:url(<%= movieRender.image.url%>)"></div>
           <h2 class="movie__title"><%= movieRender.title  %></h2>
@@ -19,11 +17,16 @@
             Tillbaka till alla filmer
           </a>
         </div>
-        <% } else { %>
-          <div class="notFound">
-          <h1 class="notFound__title"><%- movieRender %> </h1>
-          <a class="movie__button" href="/movies">
-            Tillbaka till alla filmer
+        <% } else if (Array.isArray(movieRender)) { %>
+          <% movieRender.forEach(movie => { %>
+        <div class="movieTemplate__card">
+          <div class="movieTemplate__cover" style="background-image:url(<%= movie.image.url%>)"></div>
+          <div class="movieTemplate__img" style="background-image:url(<%= movie.image.url%>)"></div>
+          <h2 class="movieTemplate__title"><%= movie.title  %></h2>
+          <a class="movieTemplate__button" href="/movies/<%- movie.id %>">
+            Se mer
           </a>
         </div>
-        <% } %>
+        <% })}; %>
+        
+        

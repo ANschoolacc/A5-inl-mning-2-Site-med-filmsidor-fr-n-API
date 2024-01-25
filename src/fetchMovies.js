@@ -31,7 +31,7 @@ export async function specMovie(movieId) {
     return modifiedObject;
   }
   catch {
-    const notFound = 'Page not found'
+    const notFound = '404 (Not found)'
     return notFound
   }
 }
